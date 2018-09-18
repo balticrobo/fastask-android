@@ -1,6 +1,7 @@
 package com.example.katarzyna.fastask.activities
 
 import android.os.Bundle
+import android.widget.Toast
 import com.example.katarzyna.fastask.R
 import com.example.katarzyna.fastask.base.BaseActivity
 import com.example.katarzyna.fastask.model.Task
@@ -26,20 +27,19 @@ class TaskActivity : BaseActivity<TaskPresenter>(), TaskView{
         presenter.onViewDestroyed()
     }
 
-
     override fun hideLoading() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        println("hide")
     }
 
     override fun instantiatePresenter(): TaskPresenter {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return TaskPresenter(this)
     }
 
     override fun updateTask(task: List<Task>) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        postsAdapter.updatePosts(task)
     }
 
     override fun showError(error: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Toast.makeText(this, error, Toast.LENGTH_LONG).show()
     }
 }
