@@ -1,6 +1,6 @@
 package com.example.katarzyna.fastask.injection.component
 
-import com.example.katarzyna.fastask.activities.TaskPresenter
+import com.example.katarzyna.fastask.activities.main.TaskPresenter
 import com.example.katarzyna.fastask.base.BaseView
 import com.example.katarzyna.fastask.injection.module.ContextModule
 import com.example.katarzyna.fastask.injection.module.NetworkModule

@@ -1,8 +1,6 @@
-package com.example.katarzyna.fastask.activities
+package com.example.katarzyna.fastask.activities.main
 
-import com.example.katarzyna.fastask.R
 import com.example.katarzyna.fastask.base.BasePresenter
-import com.example.katarzyna.fastask.base.BaseView
 import com.example.katarzyna.fastask.connection.TaskApi
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -20,7 +18,6 @@ class TaskPresenter(postView: TaskView): BasePresenter<TaskView>(postView)  {
     }
 
     fun loadPosts() {
-     //   view.showLoading()
         subscription = postApi
                 .getAllActiveTask()
                 .observeOn(AndroidSchedulers.mainThread())

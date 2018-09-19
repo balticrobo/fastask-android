@@ -3,7 +3,7 @@ package com.example.katarzyna.fastask
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.example.katarzyna.fastask.activities.TaskActivity
+import com.example.katarzyna.fastask.activities.main.TaskActivity
 
 
 class SplashScreenActivity : AppCompatActivity() {

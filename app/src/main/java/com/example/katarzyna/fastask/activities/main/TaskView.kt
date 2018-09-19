@@ -1,4 +1,4 @@
-package com.example.katarzyna.fastask.activities
+package com.example.katarzyna.fastask.activities.main
 
 import com.example.katarzyna.fastask.base.BaseView
 import com.example.katarzyna.fastask.model.Task

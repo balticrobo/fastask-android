@@ -1,24 +1,20 @@
-package com.example.katarzyna.fastask.activities
+package com.example.katarzyna.fastask.activities.main
 
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
 import android.widget.Toast
 import com.example.katarzyna.fastask.R
 import com.example.katarzyna.fastask.base.BaseActivity
 import com.example.katarzyna.fastask.model.Task
+import kotlinx.android.synthetic.main.activity_task.*
 
-class TaskActivity : BaseActivity<TaskPresenter>(), TaskView{
+class TaskActivity : BaseActivity<TaskPresenter>(), TaskView {
 //    private lateinit var binding: ActivityPostBinding
     private val postsAdapter = TaskAdapter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        setContentView(R.layout.activity_task)
-//        binding = DataBindingUtil.setContentView(this, R.layout.activity_task)
-//        binding.adapter = postsAdapter
-//        binding.layoutManager = LinearLayoutManager(this)
-//        binding.dividerItemDecoration = DividerItemDecoration(this, LinearLayoutManager.VERTICAL)
-
+        setContentView(R.layout.activity_main_menu)
         presenter.onViewCreated()
     }
 
@@ -36,7 +32,10 @@ class TaskActivity : BaseActivity<TaskPresenter>(), TaskView{
     }
 
     override fun updateTask(task: List<Task>) {
+        task_recycleview.layoutManager = LinearLayoutManager(this)
+        task_recycleview.adapter = postsAdapter
         postsAdapter.updatePosts(task)
+        println("update")
     }
 
     override fun showError(error: String) {

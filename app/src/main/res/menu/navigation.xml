@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/all_tasks"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/active_tasks" />
+
+    <item
+        android:id="@+id/reserved_tasks"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/reserved_tasks" />
+
+    <item
+        android:id="@+id/reported_tasks"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/reported_tasks" />
+
+    <item
+        android:id="@+id/add_task"
+        android:icon="@drawable/ic_add_white_24dp"
+        android:title="@string/add_task" />
+
+</menu>
