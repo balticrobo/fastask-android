@@ -9,12 +9,11 @@ import com.example.katarzyna.fastask.model.Task
 import kotlinx.android.synthetic.main.activity_task.*
 
 class TaskActivity : BaseActivity<TaskPresenter>(), TaskView {
-//    private lateinit var binding: ActivityPostBinding
     private val postsAdapter = TaskAdapter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_menu)
+        setContentView(R.layout.activity_task)
         presenter.onViewCreated()
     }
 
