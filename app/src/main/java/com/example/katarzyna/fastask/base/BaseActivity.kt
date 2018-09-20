@@ -12,9 +12,6 @@ abstract class BaseActivity<P : BasePresenter<BaseView>> : BaseView, AppCompatAc
         presenter = instantiatePresenter()
     }
 
-    /**
-     * Instantiates the presenter the Activity is based on.
-     */
     protected abstract fun instantiatePresenter(): P
 
     override fun getContext(): Context {
