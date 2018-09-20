@@ -1,4 +1,4 @@
-package com.example.katarzyna.fastask.activities.main
+package com.example.katarzyna.fastask.activity.alltask
 
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager

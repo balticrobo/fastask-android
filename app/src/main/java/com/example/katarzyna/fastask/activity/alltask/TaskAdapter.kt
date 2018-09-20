@@ -1,4 +1,4 @@
-package com.example.katarzyna.fastask.activities.main
+package com.example.katarzyna.fastask.activity.alltask
 
 
 import android.content.Context

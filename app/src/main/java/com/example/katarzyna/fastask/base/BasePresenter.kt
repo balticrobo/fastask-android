@@ -1,6 +1,6 @@
 package com.example.katarzyna.fastask.base
 
-import com.example.katarzyna.fastask.activities.main.TaskPresenter
+import com.example.katarzyna.fastask.activity.alltask.TaskPresenter
 import com.example.katarzyna.fastask.injection.component.DaggerPresenterInjector
 import com.example.katarzyna.fastask.injection.component.PresenterInjector
 import com.example.katarzyna.fastask.injection.module.ContextModule
