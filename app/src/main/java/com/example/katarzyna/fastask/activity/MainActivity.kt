@@ -1,12 +1,12 @@
-package com.example.katarzyna.fastask.activity.mainnavigation
+package com.example.katarzyna.fastask.activity
 
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 import com.example.katarzyna.fastask.R
-import kotlinx.android.synthetic.main.activity_main_navigation.*
+import kotlinx.android.synthetic.main.activity_main.*
 
-class MainNavigationActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -28,7 +28,7 @@ class MainNavigationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_navigation)
+        setContentView(R.layout.activity_main)
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }
