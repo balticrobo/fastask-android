@@ -10,4 +10,6 @@ interface TaskView: BaseView {
 
     fun hideLoading()
 
+    fun showLoading()
+
 }

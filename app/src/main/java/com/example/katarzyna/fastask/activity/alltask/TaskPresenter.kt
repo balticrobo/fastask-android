@@ -15,12 +15,18 @@ class TaskPresenter(postView: TaskView): BasePresenter<TaskView>(postView) {
 
     private var subscription: Disposable? = null
 
-    override fun onViewCreated() {
-        loadAllTasks()
-    }
 
     fun loadAllTasks() {
-        subscription = setSubscribe(postApi.getCreatedByMeTask())
+        changeSubscriber{ postApi.getAllActiveTask()}
+    }
+
+    fun loadReported(){
+        changeSubscriber{ postApi.getCreatedByMeTask()}
+    }
+
+    fun changeSubscriber(funtion:()-> Observable<List<Task>>){
+        view.showLoading()
+        subscription = setSubscribe(funtion())
     }
 
     fun setSubscribe(requestedList: Observable<List<Task>>): Disposable? {
@@ -29,12 +35,16 @@ class TaskPresenter(postView: TaskView): BasePresenter<TaskView>(postView) {
                 .subscribeOn(Schedulers.io())
                 .doOnTerminate { view.hideLoading() }
                 .subscribe(
-                        { postList -> view.updateTask(postList) },
+                        {
+                            postList ->
+                                view.hideLoading()
+                                view.updateTask(postList)
+                        },
                         { view.showError("error") }
                 )
     }
 
-    fun loadMyRegisteredTasks() {
-        subscription = setSubscribe(postApi.getCreatedByMeTask())
+    fun loadReserved() {
+        //TODO think about that
     }
 }

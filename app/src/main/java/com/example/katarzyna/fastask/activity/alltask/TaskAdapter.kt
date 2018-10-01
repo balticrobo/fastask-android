@@ -2,6 +2,7 @@ package com.example.katarzyna.fastask.activity.alltask
 
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -35,6 +36,12 @@ class TaskAdapter (private val context: Context) : RecyclerView.Adapter<TaskAdap
     class PostViewHolder(var view: View, var context: Context) : RecyclerView.ViewHolder(view) {
         fun bind(task: Task) {
             view.task_name.text = task.action
+            view.setOnClickListener {
+
+//                val intent = Intent(context, IncidentFlightLogsDetailsActivity::class.java)
+//                intent.putExtra(HISTORYDETAILS_INTENT, incidentFlight.date)
+//                view.context.startActivity(intent)
+            }
         }
     }
 }
