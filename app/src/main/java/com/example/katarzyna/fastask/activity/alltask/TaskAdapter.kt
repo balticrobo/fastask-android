@@ -10,7 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.katarzyna.fastask.R
 import com.example.katarzyna.fastask.activity.ReportedTaskDetailsActivity
-import com.example.katarzyna.fastask.activity.TaskActivity
 import com.example.katarzyna.fastask.activity.TaskDetailsActivity
 import com.example.katarzyna.fastask.model.Task
 import kotlinx.android.synthetic.main.item_task.view.*
