@@ -4,4 +4,5 @@
     <string name="all_tasks">all task</string>
     <string name="reserved_tasks">reserved</string>
     <string name="reported_tasks">reported</string>
+    <string name="assign_to_me">assign to me</string>
 </resources>
