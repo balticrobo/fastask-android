@@ -16,6 +16,28 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity :  BaseActivity<TaskPresenter>(), TaskView {
     private val taskAdapter = TaskAdapter(this)
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        presenter.loadAllTasks()
+        presenter.onViewCreated()
+    }
+
+    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        when (item.itemId) {
+            R.id.all_tasks -> {
+                presenter.loadAllTasks()
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.reported -> {
+                presenter.loadReported()
+                return@OnNavigationItemSelectedListener true
+            }
+        }
+        false
+    }
 
     override fun instantiatePresenter(): TaskPresenter {
         return TaskPresenter(this)    }
@@ -40,27 +62,4 @@ class MainActivity :  BaseActivity<TaskPresenter>(), TaskView {
         progres_bar.visibility = View.VISIBLE
     }
 
-    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
-        when (item.itemId) {
-            R.id.all_tasks -> {
-                presenter.loadAllTasks()
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.reported -> {
-                presenter.loadReported()
-                return@OnNavigationItemSelectedListener true
-            }
-        }
-        false
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        presenter.loadAllTasks()
-        presenter.onViewCreated()
-
-    }
 }

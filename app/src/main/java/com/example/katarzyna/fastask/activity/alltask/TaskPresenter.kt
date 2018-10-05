@@ -33,14 +33,17 @@ class TaskPresenter(postView: TaskView): BasePresenter<TaskView>(postView) {
         return requestedList
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
-                .doOnTerminate { view.hideLoading() }
+                .doOnTerminate {}
                 .subscribe(
                         {
+
                             postList ->
                                 view.hideLoading()
                                 view.updateTask(postList)
                         },
-                        { view.showError("error") }
+                        {   error ->
+                            view.hideLoading()
+                            view.showError("error") }
                 )
     }
 

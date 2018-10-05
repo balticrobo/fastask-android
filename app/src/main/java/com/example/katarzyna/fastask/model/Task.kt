@@ -8,7 +8,7 @@ data class Task(val id: Int,
                 val action: String,
                 val location: String,
                 val creatorid: String,
-                val active: Int,
+                val active: Boolean,
                 val comment: String,
                 val data: String) : Parcelable {
     constructor(parcel: Parcel) : this(
@@ -16,7 +16,7 @@ data class Task(val id: Int,
             parcel.readString(),
             parcel.readString(),
             parcel.readString(),
-            parcel.readInt(),
+            !parcel.readByte().equals(0),
             parcel.readString(),
             parcel.readString())
 
@@ -25,7 +25,7 @@ data class Task(val id: Int,
         parcel.writeString(action)
         parcel.writeString(location)
         parcel.writeString(creatorid)
-        parcel.writeInt(active)
+        parcel.writeByte((if (active) 1 else 0).toByte())
         parcel.writeString(comment)
         parcel.writeString(data)
     }
