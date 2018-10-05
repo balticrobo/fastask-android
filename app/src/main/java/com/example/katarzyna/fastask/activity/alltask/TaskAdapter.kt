@@ -40,12 +40,6 @@ class TaskAdapter (private val context: Context) : RecyclerView.Adapter<TaskAdap
 
     class PostViewHolder(var view: View, var context: Context) : RecyclerView.ViewHolder(view) {
 
-            fun getTaskDetailActivity(): TaskActivity {
-                if (2 ==2)
-                    return TaskDetailsActivity::class
-                return ReportedTaskDetailsActivity::class
-            }
-
 
         fun bind(task: Task) {
             view.task_name.text = task.action
