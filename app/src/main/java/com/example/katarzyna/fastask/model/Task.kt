@@ -7,7 +7,7 @@ import android.os.Parcelable
 data class Task(val id: Int,
                 val action: String,
                 val location: String,
-                val creatorid: String,
+                val creatorId: String,
                 val active: Int,
                 val comment: String,
                 val data: String) : Parcelable {
@@ -24,7 +24,7 @@ data class Task(val id: Int,
         parcel.writeInt(id)
         parcel.writeString(action)
         parcel.writeString(location)
-        parcel.writeString(creatorid)
+        parcel.writeString(creatorId)
         parcel.writeInt(active)
         parcel.writeString(comment)
         parcel.writeString(data)
@@ -49,7 +49,7 @@ data class Task(val id: Int,
 //data class Task(val id: Int,
 //                val action: String,
 //                val location: String,
-//                val creatorid: String,
+//                val creatorId: String,
 //                val active: Boolean,
 //                val comment: String,
 //                val data: String): Parcelable{

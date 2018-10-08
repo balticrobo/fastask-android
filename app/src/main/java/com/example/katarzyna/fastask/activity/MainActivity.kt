@@ -16,27 +16,12 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity :  BaseActivity<TaskPresenter>(), TaskView {
     private val taskAdapter = TaskAdapter(this)
 
-    override fun instantiatePresenter(): TaskPresenter {
-        return TaskPresenter(this)    }
-
-    override fun updateTask(task: List<Task>) {
-        task_recycleview.layoutManager = LinearLayoutManager(this)
-        task_recycleview.adapter = taskAdapter
-        taskAdapter.updatePosts(task)
-        println("update")    }
-
-    override fun showError(error: String) {
-        Toast.makeText(this, error, Toast.LENGTH_LONG).show()
-    }
-
-    override fun hideLoading() {
-        task_recycleview.visibility = View.VISIBLE
-        progres_bar.visibility = View.INVISIBLE
-    }
-
-    override fun showLoading() {
-        task_recycleview.visibility = View.INVISIBLE
-        progres_bar.visibility = View.VISIBLE
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        presenter.loadAllTasks()
+        presenter.onViewCreated()
     }
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
@@ -53,13 +38,26 @@ class MainActivity :  BaseActivity<TaskPresenter>(), TaskView {
         false
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+    override fun instantiatePresenter(): TaskPresenter {
+        return TaskPresenter(this)    }
 
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        presenter.loadAllTasks()
-        presenter.onViewCreated()
+    override fun updateTask(task: List<Task>) {
+        task_recycleview.layoutManager = LinearLayoutManager(this)
+        task_recycleview.adapter = taskAdapter
+        taskAdapter.updatePosts(task)
+        }
 
+    override fun showError(error: String) {
+        Toast.makeText(this, error, Toast.LENGTH_LONG).show()
+    }
+
+    override fun hideLoading() {
+        task_recycleview.visibility = View.VISIBLE
+        progres_bar.visibility = View.INVISIBLE
+    }
+
+    override fun showLoading() {
+        task_recycleview.visibility = View.INVISIBLE
+        progres_bar.visibility = View.VISIBLE
     }
 }

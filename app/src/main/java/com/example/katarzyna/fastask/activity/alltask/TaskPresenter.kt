@@ -15,7 +15,6 @@ class TaskPresenter(postView: TaskView): BasePresenter<TaskView>(postView) {
 
     private var subscription: Disposable? = null
 
-
     fun loadAllTasks() {
         changeSubscriber{ postApi.getAllActiveTask()}
     }
