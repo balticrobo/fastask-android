@@ -16,7 +16,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity :  BaseActivity<TaskPresenter>(), TaskView {
     private val taskAdapter = TaskAdapter(this)
 
-
     override fun instantiatePresenter(): TaskPresenter {
         return TaskPresenter(this)    }
 
