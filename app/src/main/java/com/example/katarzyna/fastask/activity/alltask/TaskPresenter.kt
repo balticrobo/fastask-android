@@ -24,12 +24,12 @@ class TaskPresenter(postView: TaskView): BasePresenter<TaskView>(postView) {
         changeSubscriber{ postApi.getCreatedByMeTask()}
     }
 
-    fun changeSubscriber(funtion:()-> Observable<List<Task>>){
+    private fun changeSubscriber(funtion:()-> Observable<List<Task>>){
         view.showLoading()
         subscription = setSubscribe(funtion())
     }
 
-    fun setSubscribe(requestedList: Observable<List<Task>>): Disposable? {
+    private fun setSubscribe(requestedList: Observable<List<Task>>): Disposable? {
         return requestedList
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())

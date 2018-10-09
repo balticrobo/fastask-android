@@ -44,36 +44,3 @@ data class Task(val id: Int,
         }
     }
 }
-
-
-//data class Task(val id: Int,
-//                val action: String,
-//                val location: String,
-//                val creatorid: String,
-//                val active: Boolean,
-//                val comment: String,
-//                val data: String): Parcelable{
-//
-//    constructor(parcel: Parcel):this(
-//        parcel.readString(),
-//        parcel.readInt()
-//    )
-//
-//    override fun writeToParcel(parcel: Parcel, flags: Int) {
-//
-//    }
-//
-//    override fun describeContents(): Int {
-//        return 0
-//    }
-//
-//    companion object CREATOR : Parcelable.Creator<Task> {
-//        override fun createFromParcel(parcel: Parcel): Task {
-//            return Task(parcel)
-//        }
-//
-//        override fun newArray(size: Int): Array<Task?> {
-//            return arrayOfNulls(size)
-//        }
-//    }
-//}
