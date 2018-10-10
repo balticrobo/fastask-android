@@ -12,6 +12,7 @@ class TaskDetailsActivity :  AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //todo white board
+        // todo problem with xml
         setContentView(R.layout.activity_task_details)
         val task = intent.extras.getParcelable<Task>(TASK)
         setTaskInfo(task)
@@ -21,7 +22,7 @@ class TaskDetailsActivity :  AppCompatActivity() {
     private fun setTaskInfo(task: Task?) {
         task?.let {
             action.text = task.action
-            comment.text = task.comment
+            label_comment.text = task.comment
             location.text = task.location
         }
     }

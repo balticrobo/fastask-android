@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView">
 
         <TextView
-            android:id="@+id/comment"
+            android:id="@+id/label_comment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="52dp"
@@ -71,7 +71,7 @@
             android:layout_marginEnd="4dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/comment"
+            app:layout_constraintEnd_toStartOf="@+id/label_comment"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/action"
             app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp" />
@@ -100,7 +100,7 @@
 
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/label_comment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -109,7 +109,7 @@
             android:text="someone tall, the lamp is hanging"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/comment"
+            app:layout_constraintStart_toEndOf="@+id/label_comment"
             app:layout_constraintTop_toBottomOf="@+id/action" />
 
         <TextView
@@ -122,7 +122,7 @@
             android:text="second floor, 299"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/comment"
+            app:layout_constraintStart_toEndOf="@+id/label_comment"
             app:layout_constraintTop_toBottomOf="@+id/action" />
 
         <ImageView
@@ -132,7 +132,7 @@
             android:layout_marginEnd="4dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="52dp"
-            app:layout_constraintEnd_toStartOf="@+id/comment"
+            app:layout_constraintEnd_toStartOf="@+id/label_comment"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/action"
