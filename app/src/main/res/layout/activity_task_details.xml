@@ -12,7 +12,7 @@
         android:layout_height="0dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/content_tast_detaiks"
+        app:layout_constraintBottom_toTopOf="@+id/content_tast_details"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/ic_down_circle" />
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/content_tast_detaiks"
+        android:id="@+id/content_tast_details"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="8dp"
@@ -39,16 +39,18 @@
             android:layout_marginTop="52dp"
             android:text="comment: "
             app:layout_constraintTop_toBottomOf="@+id/action"
-            tools:layout_editor_absoluteX="52dp" />
+            tools:layout_editor_absoluteX="52dp"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/label_location3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
             android:layout_marginTop="8dp"
             android:text="location: "
-            app:layout_constraintTop_toBottomOf="@+id/action"
-            tools:layout_editor_absoluteX="52dp" />
+            app:layout_constraintEnd_toStartOf="@+id/location"
+            app:layout_constraintTop_toBottomOf="@+id/action" />
 
         <Button
             android:id="@+id/assign_to_me"
@@ -78,13 +80,16 @@
             android:id="@+id/action"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@+id/assign_to_me"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <android.support.constraint.Guideline
             android:id="@+id/guideline"
@@ -102,7 +107,6 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="52dp"
             android:text="someone tall, the lamp is hanging"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/comment"

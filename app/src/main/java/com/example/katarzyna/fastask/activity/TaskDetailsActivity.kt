@@ -5,13 +5,24 @@ import android.os.Bundle
 import com.example.katarzyna.fastask.R
 import com.example.katarzyna.fastask.common.SharedPrefManager.Companion.TASK
 import com.example.katarzyna.fastask.model.Task
+import kotlinx.android.synthetic.main.activity_task_details.*
 
 class TaskDetailsActivity :  AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val task = intent.extras.getParcelable<Task>(TASK)
-        println(task.comment)
+        //todo white board
         setContentView(R.layout.activity_task_details)
+        val task = intent.extras.getParcelable<Task>(TASK)
+        setTaskInfo(task)
+
+    }
+
+    private fun setTaskInfo(task: Task?) {
+        task?.let {
+            action.text = task.action
+            comment.text = task.comment
+            location.text = task.location
+        }
     }
 }
