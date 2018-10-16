@@ -22,7 +22,7 @@ class TaskDetailsActivity :  AppCompatActivity() {
     private fun setTaskInfo(task: Task?) {
         task?.let {
             action.text = task.action
-            label_comment.text = task.comment
+            comment.text = task.comment
             location.text = task.location
         }
     }
