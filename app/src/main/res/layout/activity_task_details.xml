@@ -17,15 +17,18 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_down_circle" />
+        app:srcCompat="@drawable/ic_down_circle"
+        android:contentDescription="@string/task_image"/>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/content_tast_details"
+        android:background="@color/white"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="38dp"
         android:layout_marginEnd="8dp"
+        android:layout_margin="@dimen/details_bar_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -39,7 +42,6 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:text="@string/assign_to_me"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -52,7 +54,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:text="Action"
+            android:text="@sting/action"
             app:layout_constraintBottom_toTopOf="@+id/assign_to_me"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +70,6 @@
             android:layout_marginTop="12dp"
             android:layout_marginEnd="244dp"
             android:layout_marginBottom="8dp"
-            android:text="TextView"
             app:layout_constraintBottom_toTopOf="@+id/assign_to_me"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline"
@@ -82,7 +83,6 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="44dp"
             android:layout_marginBottom="8dp"
-            android:text="TextView"
             app:layout_constraintBottom_toTopOf="@+id/assign_to_me"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline"

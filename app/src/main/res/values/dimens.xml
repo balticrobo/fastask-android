@@ -9,6 +9,7 @@
     <dimen name="progress_bar">100dp</dimen>
     <dimen name="task_details_image">240dp</dimen>
     <dimen name="comment_task_details">310dp</dimen>
+    <dimen name="details_bar_margin">20</dimen>
 
 
 </resources>
