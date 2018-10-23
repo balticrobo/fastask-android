@@ -9,8 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.katarzyna.fastask.R
 import com.example.katarzyna.fastask.activity.TaskDetailsActivity
-import com.example.katarzyna.fastask.common.SharedPrefManager.Companion.TASK
-import com.example.katarzyna.fastask.model.Task
+import com.example.katarzyna.fastask.common.Keys.Companion.TASK
+import com.example.katarzyna.fastask.model.entity.Task
 import kotlinx.android.synthetic.main.item_task.view.*
 
 class TaskAdapter (private val context: Context) : RecyclerView.Adapter<TaskAdapter.PostViewHolder>() {

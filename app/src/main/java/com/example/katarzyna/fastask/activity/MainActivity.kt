@@ -10,7 +10,7 @@ import com.example.katarzyna.fastask.activity.alltask.TaskAdapter
 import com.example.katarzyna.fastask.activity.alltask.TaskPresenter
 import com.example.katarzyna.fastask.activity.alltask.TaskView
 import com.example.katarzyna.fastask.base.BaseActivity
-import com.example.katarzyna.fastask.model.Task
+import com.example.katarzyna.fastask.model.entity.Task
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity :  BaseActivity<TaskPresenter>(), TaskView {

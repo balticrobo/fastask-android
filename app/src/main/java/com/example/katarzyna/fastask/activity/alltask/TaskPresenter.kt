@@ -2,7 +2,7 @@ package com.example.katarzyna.fastask.activity.alltask
 
 import com.example.katarzyna.fastask.base.BasePresenter
 import com.example.katarzyna.fastask.connection.TaskApi
-import com.example.katarzyna.fastask.model.Task
+import com.example.katarzyna.fastask.model.entity.Task
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable

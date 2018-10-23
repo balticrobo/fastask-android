@@ -1,13 +1,11 @@
 package com.example.katarzyna.fastask.common
 
+import android.content.Context
+
 class SharedPrefManager {
-    companion object {
-        val TASK = "TASK"
-    }
-
-
-    fun getId():Int{
-        return 1    //TODO catch and save in resonable way
+    fun getId(context: Context):Int{
+        val sharedPreferences= context.getSharedPreferences("pref", 0)
+        return sharedPreferences.getInt("id", 0)
     }
 
 }
