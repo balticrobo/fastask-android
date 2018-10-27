@@ -26,7 +26,7 @@ interface TaskApi {
     fun login(@Body login: User): Call<Void>?
 
     @POST("tasks")
-    fun createTask(@Body task: Task): Call<Void>?
+    fun createTask(@Body taskDto: TaskDto): Call<Void>?
 
     @PUT("tasks")
     fun reserveTast(@Body taskDto: TaskDto): Call<Void>?

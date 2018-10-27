@@ -11,14 +11,14 @@ import com.example.katarzyna.fastask.activity.alltask.TaskPresenter
 import com.example.katarzyna.fastask.activity.alltask.TaskView
 import com.example.katarzyna.fastask.base.BaseActivity
 import com.example.katarzyna.fastask.model.entity.Task
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.list_base_activity.*
 
-class MainActivity :  BaseActivity<TaskPresenter>(), TaskView {
+class ListBaseActivity :  BaseActivity<TaskPresenter>(), TaskView {
     private val taskAdapter = TaskAdapter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.list_base_activity)
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         presenter.loadAllTasks()

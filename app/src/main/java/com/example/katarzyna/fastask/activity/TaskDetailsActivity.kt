@@ -17,12 +17,14 @@ class TaskDetailsActivity :  AppCompatActivity() {
     @Inject
     lateinit var postApi: TaskApi
 
+    //todo or maybe remove parcable and send only id
+
     private lateinit var task: Task
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_task_details)
-        task = intent.extras.getParcelable<Task>(TASK)
+        task = intent.extras.getParcelable(TASK)
         setTaskInfo(task)
         setButton()
 
