@@ -64,9 +64,16 @@ open class NavigationMainActivity : AppCompatActivity(), NavigationView.OnNaviga
         return true
     }
 
-    private fun setFregament(fragment: Fragment) {
-        val ft = supportFragmentManager.beginTransaction()
-        ft.replace(R.id.content_frame, fragment)
-        ft.commit()
+    private fun setFregament(fragment2: Fragment) {
+//        val ft = supportFragmentManager.beginTransaction()
+//        ft.replace(R.id.content_frame, fragment)
+//        ft.commit()
+
+
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        val fragment = TListBaseFragment()
+        fragmentTransaction.replace(R.id.content_frame, fragment)
+        fragmentTransaction.commit()
     }
 }

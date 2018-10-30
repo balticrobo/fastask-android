@@ -8,7 +8,9 @@ import com.example.katarzyna.fastask.model.entity.Task
 
 
 //todo change tastpresenter to <T> presenter
-class TListBaseFragment  :  BaseFragment<TaskPresenter>(), TaskView {
+class TListBaseFragment  :  BaseFragment<TaskPresenter>(), TaskView//{BaseFragment<TaskPresenter>(), TaskView {
+{
+
     override  lateinit var presenter: TaskPresenter
 
     private val taskAdapter = TaskAdapter(context) //todo make generic
@@ -24,7 +26,7 @@ class TListBaseFragment  :  BaseFragment<TaskPresenter>(), TaskView {
     }
 
     override fun showError(error: String) {
-        println("terrable error")
+        println("terrible error")
     }
 
     override fun hideLoading() {

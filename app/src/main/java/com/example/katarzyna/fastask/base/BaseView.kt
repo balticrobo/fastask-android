@@ -2,7 +2,7 @@ package com.example.katarzyna.fastask.base
 
 import android.content.Context
 
-interface BaseView {
+interface BaseView { //todo remove????
 
     fun getContext(): Context
 }
