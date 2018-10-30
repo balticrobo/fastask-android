@@ -4,6 +4,8 @@ import android.os.Parcel
 import android.os.Parcelable
 
 
+//todo maybe remove parcelable and send only id
+
 data class Task(val id: Int,
                 val action: String,
                 val location: String,

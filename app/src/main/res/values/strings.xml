@@ -1,12 +1,13 @@
 <resources>
     <string name="app_name">FasTask</string>
     <string name="unknown_error">Unknown error</string>
-    <string name="all_tasks">all task</string>
+    <string name="all_tasks">all tasks</string>
     <string name="reserved_tasks">reserved</string>
     <string name="reported_tasks">reported</string>
     <string name="assign_to_me">assign to me</string>
     <string name="task_image">task image</string>
     <string name="title_activity_navigation_main">NavigationMainActivity</string>
+    <string name="list_activity">ListBaseActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
