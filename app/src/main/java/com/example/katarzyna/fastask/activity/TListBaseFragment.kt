@@ -16,6 +16,12 @@ import com.example.katarzyna.fastask.model.entity.Task
 //todo change tastpresenter to <T> presenter
 class TListBaseFragment: Fragment(), TaskView {
 
+
+    lateinit var presenter: TaskPresenter
+
+    lateinit var  taskAdapter :TaskAdapter //todo make generic
+
+
     override fun updateTask(task: List<Task>) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
@@ -33,19 +39,9 @@ class TListBaseFragment: Fragment(), TaskView {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        presenter = instantiatePresenter()
+        taskAdapter = TaskAdapter(activity!!.applicationContext)
+        presenter = TaskPresenter(this)
         return inflater.inflate(R.layout.list_base_activity, container, false)
     }
-
-    lateinit var presenter: TaskPresenter
-
-    private val taskAdapter = TaskAdapter(activity!!.applicationContext) //todo make generic
-
-
-   private fun instantiatePresenter(): TaskPresenter {
-        presenter = TaskPresenter(this)
-        return presenter
-    }
-
 
 }
