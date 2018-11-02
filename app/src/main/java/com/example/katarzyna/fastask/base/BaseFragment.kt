@@ -21,7 +21,7 @@ abstract class BaseFragment<P : BasePresenter<BaseView>> : BaseView, Fragment() 
     protected abstract fun instantiatePresenter(): P
 
     override fun getContext(): Context {
-        return super.getContext()!!
+        return activity!!.applicationContext
     }
 
 }

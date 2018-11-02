@@ -4,5 +4,4 @@ import android.content.Context
 
 interface BaseView { //todo remove????
 
-    fun getContext(): Context
 }
