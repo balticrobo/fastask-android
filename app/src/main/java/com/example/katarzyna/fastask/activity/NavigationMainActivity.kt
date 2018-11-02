@@ -25,7 +25,7 @@ open class NavigationMainActivity : AppCompatActivity(), NavigationView.OnNaviga
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
-        setFregament(TListBaseFragment())
+        setFragment(TListBaseFragment())
     }
 
     override fun onBackPressed() {
@@ -54,7 +54,7 @@ open class NavigationMainActivity : AppCompatActivity(), NavigationView.OnNaviga
 
 
         when (item.itemId) {
-            R.id.all_task -> setFregament(TListBaseFragment())
+            R.id.all_task -> setFragment(TListBaseFragment())
             R.id.reserved -> println("reserved")
             R.id.reported -> println("reported")
         }
@@ -64,16 +64,9 @@ open class NavigationMainActivity : AppCompatActivity(), NavigationView.OnNaviga
         return true
     }
 
-    private fun setFregament(fragment2: Fragment) {
-//        val ft = supportFragmentManager.beginTransaction()
-//        ft.replace(R.id.content_frame, fragment)
-//        ft.commit()
-
-
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        val fragment = TListBaseFragment()
-        fragmentTransaction.replace(R.id.content_frame, fragment)
-        fragmentTransaction.commit()
+    private fun setFragment(fragment: Fragment) {
+        val ft = supportFragmentManager.beginTransaction()
+        ft.replace(R.id.content_frame, fragment)
+        ft.commit()
     }
 }
