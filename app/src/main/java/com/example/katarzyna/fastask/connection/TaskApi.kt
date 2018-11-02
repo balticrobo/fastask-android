@@ -1,8 +1,9 @@
 package com.example.katarzyna.fastask.connection
 
 import android.content.Context
-import com.example.katarzyna.fastask.model.Task
-import com.example.katarzyna.fastask.model.User
+import com.example.katarzyna.fastask.model.dto.TaskDto
+import com.example.katarzyna.fastask.model.entity.Task
+import com.example.katarzyna.fastask.model.entity.User
 import io.reactivex.Observable
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -10,6 +11,7 @@ import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.PUT
 import java.util.concurrent.TimeUnit
 
 interface TaskApi {
@@ -24,7 +26,10 @@ interface TaskApi {
     fun login(@Body login: User): Call<Void>?
 
     @POST("tasks")
-    fun createTask(@Body task: Task): Call<Void>?
+    fun createTask(@Body taskDto: TaskDto): Call<Void>?
+
+    @PUT("tasks")
+    fun reserveTast(@Body taskDto: TaskDto): Call<Void>?
 
 
 

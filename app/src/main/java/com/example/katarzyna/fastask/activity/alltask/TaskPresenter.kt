@@ -2,7 +2,7 @@ package com.example.katarzyna.fastask.activity.alltask
 
 import com.example.katarzyna.fastask.base.BasePresenter
 import com.example.katarzyna.fastask.connection.TaskApi
-import com.example.katarzyna.fastask.model.Task
+import com.example.katarzyna.fastask.model.entity.Task
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -23,23 +23,26 @@ class TaskPresenter(postView: TaskView): BasePresenter<TaskView>(postView) {
         changeSubscriber{ postApi.getCreatedByMeTask()}
     }
 
-    fun changeSubscriber(funtion:()-> Observable<List<Task>>){
+    private fun changeSubscriber(funtion:()-> Observable<List<Task>>){
         view.showLoading()
         subscription = setSubscribe(funtion())
     }
 
-    fun setSubscribe(requestedList: Observable<List<Task>>): Disposable? {
+    private fun setSubscribe(requestedList: Observable<List<Task>>): Disposable? {
         return requestedList
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
-                .doOnTerminate { view.hideLoading() }
+                .doOnTerminate {}
                 .subscribe(
                         {
+
                             postList ->
                                 view.hideLoading()
                                 view.updateTask(postList)
                         },
-                        { view.showError("error") }
+                        {   error ->
+                            view.hideLoading()
+                            view.showError("error") }
                 )
     }
 

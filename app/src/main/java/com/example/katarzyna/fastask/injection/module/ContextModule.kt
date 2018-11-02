@@ -7,16 +7,9 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-// Safe here as we are dealing with a Dagger 2 module
 @Suppress("unused")
 object ContextModule {
-
-    @Provides
-    @JvmStatic
-    internal fun provideContext(baseView: BaseView): Context {
-        return baseView.getContext()
-    }
-
+    
     @Provides
     @JvmStatic
     internal fun provideApplication(context: Context): Application {

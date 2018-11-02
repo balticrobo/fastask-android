@@ -7,9 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.katarzyna.fastask.R
-import com.example.katarzyna.fastask.activity.ReportedTaskDetailsActivity
-import com.example.katarzyna.fastask.common.SharedPref.Companion.HISTORYDETAILS_INTENT
-import com.example.katarzyna.fastask.model.Task
+
+import com.example.katarzyna.fastask.activity.TaskDetailsActivity
+import com.example.katarzyna.fastask.common.Keys.Companion.TASK
+import com.example.katarzyna.fastask.model.entity.Task
 import kotlinx.android.synthetic.main.item_task.view.*
 
 class TaskAdapter (private val context: Context) : RecyclerView.Adapter<TaskAdapter.PostViewHolder>() {
@@ -39,8 +40,8 @@ class TaskAdapter (private val context: Context) : RecyclerView.Adapter<TaskAdap
         fun bind(task: Task) {
             view.task_name.text = task.action
             view.setOnClickListener {
-                val intent = Intent(context, ReportedTaskDetailsActivity::class.java)
-                intent.putExtra(HISTORYDETAILS_INTENT, task)
+                val intent = Intent(context, TaskDetailsActivity::class.java)
+                intent.putExtra(TASK, task)
                 view.context.startActivity(intent)
             }
         }
