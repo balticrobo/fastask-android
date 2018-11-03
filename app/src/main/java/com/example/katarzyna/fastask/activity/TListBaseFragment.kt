@@ -10,16 +10,18 @@ import com.example.katarzyna.fastask.R
 import com.example.katarzyna.fastask.activity.alltask.TaskAdapter
 import com.example.katarzyna.fastask.activity.alltask.TaskPresenter
 import com.example.katarzyna.fastask.activity.alltask.TaskView
+import com.example.katarzyna.fastask.base.BaseFragment
 import com.example.katarzyna.fastask.model.entity.Task
 
 
 //todo change tastpresenter to <T> presenter
-class TListBaseFragment: Fragment(), TaskView {
+class TListBaseFragment: BaseFragment<TaskPresenter>(), TaskView {
+    override fun instantiatePresenter(): TaskPresenter {
+        return TaskPresenter(this)
+    }
 
 
-    lateinit var presenter: TaskPresenter
-
-    lateinit var  taskAdapter :TaskAdapter //todo make generic
+    lateinit var  taskAdapter:TaskAdapter
 
 
     override fun updateTask(task: List<Task>) {
@@ -40,8 +42,7 @@ class TListBaseFragment: Fragment(), TaskView {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         taskAdapter = TaskAdapter(activity!!.applicationContext)
-        presenter = TaskPresenter(this)
-        return inflater.inflate(R.layout.list_base_activity, container, false)
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
 
 }

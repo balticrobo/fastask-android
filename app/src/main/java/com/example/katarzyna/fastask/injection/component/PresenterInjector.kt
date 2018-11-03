@@ -7,7 +7,7 @@ import com.example.katarzyna.fastask.injection.module.NetworkModule
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
-//
+
 @Singleton
 @Component(modules = [(ContextModule::class), (NetworkModule::class)])
 interface PresenterInjector {
