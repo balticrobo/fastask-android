@@ -1,48 +1,50 @@
 package com.example.katarzyna.fastask.activity
 
-import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.INVISIBLE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
-import com.example.katarzyna.fastask.R
 import com.example.katarzyna.fastask.activity.alltask.TaskAdapter
 import com.example.katarzyna.fastask.activity.alltask.TaskPresenter
 import com.example.katarzyna.fastask.activity.alltask.TaskView
 import com.example.katarzyna.fastask.base.BaseFragment
 import com.example.katarzyna.fastask.model.entity.Task
+import kotlinx.android.synthetic.main.list_base_activity.*
 
 
 //todo change tastpresenter to <T> presenter
 class TListBaseFragment: BaseFragment<TaskPresenter>(), TaskView {
+
+    private lateinit var  taskAdapter:TaskAdapter
+
     override fun instantiatePresenter(): TaskPresenter {
         return TaskPresenter(this)
     }
 
-
-    lateinit var  taskAdapter:TaskAdapter
-
-
     override fun updateTask(task: List<Task>) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//        taskAdapter.updatePosts(task)
     }
 
     override fun showError(error: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        println(error)
     }
 
     override fun hideLoading() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        loading_bar.visibility = INVISIBLE
     }
 
     override fun showLoading() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        loading_bar.visibility = VISIBLE
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onStart() {
+        super.onStart()
         taskAdapter = TaskAdapter(activity!!.applicationContext)
-        return super.onCreateView(inflater, container, savedInstanceState)
+        presenter = instantiatePresenter()
+        presenter.loadAllTasks()
     }
+
 
 }

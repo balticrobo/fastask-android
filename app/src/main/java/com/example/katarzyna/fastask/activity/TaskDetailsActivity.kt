@@ -1,8 +1,7 @@
 package com.example.katarzyna.fastask.activity
 
-import android.content.SharedPreferences
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import com.example.katarzyna.fastask.R
 import com.example.katarzyna.fastask.common.Keys.Companion.TASK
 import com.example.katarzyna.fastask.common.SharedPrefManager
