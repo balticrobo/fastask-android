@@ -9,3 +9,4 @@ app/*.iml
 /captures
 .externalNativeBuild
 gradle/*
+app/app.iml
